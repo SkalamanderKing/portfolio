@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<!-- saved from url=(0016)http://localhost -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv">
+
+	<head>
+	<!--Fredrick �stlund All rights reserved-->
+	<title>Birdy</title>
+	<meta name="author" content="Fredrick �stlund" />
+	<meta name="description" content="Homepage of Fredrick �stlund" />
+	<meta name="keywords" content="Fredrick �Stlund, Fredrick, �stlund, Birdy, game, spel, Birdie" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><!-- <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> -->
+
+	<link href="bStyle/birdyStyle.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+
+	<!--H�ller allt p� plats-->
+	<div id="content">
+
+	<!--rubrik-->
+	<p class="rub">
+	</p>
+
+	<!--skapar karm-->
+	<h1>Birdy</h1>
+
+	<!--bakgrunden-->
+	<div class="bakgrundO">
+	<div>
+
+	<!--nedanst�ende lista �r h�llare f�r sprite-css, och har l�nkar till andra sidor-->
+	<ul id="navlist">
+  		<li id="home"><a href="../index.html"></a></li>
+  		<li id="games"><a href="games.html"></a></li>
+  		<li id="misc"><a href="portfolio.html"></a></li>
+		<li id="about"><a href="about.html"></a></li>
+	</ul>
+	</div>
+<p class="txt">
+Birdys Russian Roulette
+</p>
+<p class="txt">
+<img id="myImage" onclick="clicked()"  src="start.gif" width="300" height="300" />
+<script>
+		var isIE = /*@cc_on!@*/false || !!document.documentMode; //Kollar om det �r IE (minst 6)
+
+		//kollar vad som skall ske/bild
+		var i=0;
+
+		//slumpa
+		var x=0;
+		//x= Math.floor((Math.random() * 2) + 1);
+
+		//Om klickat blir det true
+		var click=false;
+
+		//Ljud, men bara om det inte �r EI
+		if(!isIE)
+		var sound = new Audio("gunshoot1.wav");
+		sound.preload = 'auto';
+		sound.load();
+
+		//Anropas s� att ljud spelas (ej IE)
+		function playSound(volume)
+		{
+  			var click=sound.cloneNode();
+  			click.volume=volume;
+  			click.play();
+		}
+
+		//slumpa kula i loppet
+		function slump()
+		{
+			x= Math.floor((Math.random() * 6) + 1);
+		}
+
+		//Har spelaren klickat k�rs koden, funk beh f�r att kunna s�tta click till t/f
+		function clicked()
+		{
+			click=true;
+			changeImage();
+		}
+
+	// Denna huvudfunktion anv en timer att visa bilder mm
+	function changeImage()
+	{
+		var image = document.getElementById('myImage');
+
+			//f�rsta bild efter klick
+			if (i==0)//image.src.match("intro" &&
+			{
+        			image.src = "intro.gif";
+				i=1;
+
+				//stopp s� klick ej funkar efter 1:a ggr
+				document.getElementById('myImage').style.pointerEvents = 'none';
+    			}
+
+	//Visar att det �r Birdys tur att skjuta. Hit �terkommer man varann g�ng ifall B/P inte d�tt
+	else if(i==1)
+	{
+		document.getElementById('myImage').style.pointerEvents = 'none';
+		slump();
+		image.src = "spel3.gif";
+		i=2;
+	}
+
+			//birdy d�d eller ej
+			else if(i==2)
+			{
+				//Om 1 finns en kula i loppet och Birdy d�r
+				if(x==1)
+				{
+					image.src = "bDead.gif";
+
+					//hoppa till Game over
+					i=3;
+
+					//Ljud om det inte �r IE
+					if(!isIE)
+					playSound(1);
+				}//if 1
+
+				//Birdy �verlevde
+				else
+				{
+					image.src = "bSurvive.gif";
+					i=4;
+				}
+
+			}
+
+	//Visar Game over (b�de P och B)
+	else if(i==3)
+	{
+		image.src = "gO.gif";
+	 	i=7;
+	}
+
+			//visar spelarens tur
+			else if(i==4)
+			{
+				image.src = "pS.gif";
+				i=5;
+			}
+
+	//Sj�lva spelet: spelaren tur (idle)
+	else if(i==5)
+	{
+		//n�r man klickat p� bilden blir den genast falsk igen (s� klicket inte ligger kvar i "minnet")
+		click=false;
+		image.src = "inwait.gif";
+
+		slump();
+
+		//s� man ska kunna klicka, s� fort man gjort det hoppas till i=6
+		document.getElementById('myImage').style.pointerEvents = 'auto';
+		i=6;
+	}
+
+			//spelaren �de
+			else if(i==6)
+			{
+				//st�ng av klick igen
+				document.getElementById('myImage').style.pointerEvents = 'none';
+
+				//spelaren d�r
+				if(x==1)
+				{
+					image.src = "pDead.gif";
+
+					if(!isIE)
+					playSound(1);
+
+					//hoppa till game over
+					i=3;
+				}//if 1
+
+				//spelaren �verlevde
+				else
+				{
+					image.src = "pSurvive.gif";
+
+					//Birdys tur igen
+					i=1;
+				}
+
+			}//else 6
+
+	//efter game over
+	else if(i==7)
+	{
+		//ladda om sidan
+		location.reload();
+
+		//nollst�ll r�knare
+		i=0;
+
+	}
+
+	//visar pryl i ca: 2 sek men bara om click �r sant (skriptet k�r en ggr f�rst osv)
+	if(click)
+	setTimeout('changeImage()', 2000);
+
+	}//funtion changeImage()
+
+	</script>
+</p></p>
+</div>
+</div>
+
+	<p class="foot">
+	2014&copy;  Fredrick &Ouml;stlund
+	</p>
+
+
+	</body>
+</html>

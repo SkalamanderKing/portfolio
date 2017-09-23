@@ -1,0 +1,440 @@
+/*2011 © Fredrick Östlund*/
+
+body
+{
+border-style: none;
+
+font-size: 12px;
+font-family: Verdana, Arial, Helvetica, SunSans-Regular, Sans-Serif;
+color:black;  
+padding:20px;
+margin:0px;
+text-align: center;
+}
+
+	#content 
+	{ 
+	border-style: none;	
+	text-align: left;
+	vertical-align: middle;	
+	margin:0px auto;
+	padding:0px;
+	width:768px;
+	background-color: #ffffff;
+	}
+			
+		p, h1, pre 
+		{
+		border-style: none;
+		margin: 0px; 
+		padding: 0px 0px; 
+		}
+
+			h1
+			{
+			font-size: 14px;
+			text-transform:uppercase;
+			text-align: right;
+			color:white;
+			background-color:#3F48CC;
+			/*#145411;*/
+			}
+
+a
+{ 
+outline: none;
+text-decoration: none; 
+color:white;
+/*
+border-style: none;
+background-color:transparent;
+
+*/
+
+}
+
+	.bakgrund
+	{
+	background-image:url(img/bakgrund.gif);
+	}
+		.bakgrundO 
+		{
+		background-color:#3F48CC;
+		/*background-image:url(img/bakgrundO.gif);*/
+		}
+	
+			.bakgrund, .bakgrundO 
+			{
+			/*background-image:url(img/bakgrund.gif);*/
+			background-repeat:no-repeat;
+			width:768px;
+			height:768px;
+			border-style: none;
+			position:relative;
+			margin: 0px auto; 
+			padding: 0px 0px; 
+			}
+
+	/*#navlist{position:relative;}*/
+
+		#navlist li
+		{
+		margin:0;
+		padding:0;
+		list-style:none;
+		position:absolute;
+		top:0;
+		}
+
+		#navlist li, #navlist a
+		{
+		height:184px;
+		display:block;
+		}
+
+			#home
+			{
+			left:0px;
+			width:192px;
+			}
+			
+			#home
+			{
+			background:url(img/dreams.gif) 0 0;
+			}
+			
+			#home a:hover
+			{
+			background: url(img/dreams.gif) 0 -254px;
+			}
+
+				#games
+				{
+				left:192px;
+				width:192px;
+				}
+
+				#games
+				{
+				background:url(img/dreams.gif) -192px 0;
+				}
+				
+				#games a:hover
+				{
+				background: url(img/dreams.gif) -192px -254px;
+				}
+
+					#misc
+					{
+					left:385px;
+					width:192px;
+					}
+					
+					#misc
+					{
+					background:url(img/dreams.gif) -385px 0;
+					}
+
+					#misc a:hover
+					{
+					background: url(img/dreams.gif) -385px -254px;
+					}
+
+#about
+{
+left:575px;
+width:192px;
+}
+
+#about
+{
+background:url(img/dreams.gif) -575px 0;
+}
+
+#about a:hover
+{
+background: url(img/dreams.gif) -575px -254px;
+}
+
+	.dreams
+	{
+	border-style: none;
+	position:absolute;
+
+	left:0px;
+
+	top:0px;
+	}
+
+		.birdy
+		{
+		cursor:pointer;
+		background-image:url(img/birdy.gif);
+		background-repeat:no-repeat;
+		width:256px;
+		height:320px;
+		border-style: none;
+		position:absolute;
+
+		left:390px;
+
+		top:260px;
+		}
+		
+		.rr
+		{
+		position:absolute;
+		cursor:pointer;
+		
+		background-repeat:no-repeat;
+	
+		border-style: none;
+
+		
+
+		left:200px;
+
+		top:0px;
+		}
+			.mail
+			{
+			position:absolute;
+			background-image:url(img/mail.png);
+			
+			width:256px;
+			height:64px;
+			cursor:pointer;
+			background-repeat:no-repeat;
+			border-style: none;
+			left:-90px;
+			top:10px;
+			}
+		.mov
+		{
+		position:absolute;
+		background-repeat:no-repeat;
+		border-style: none;
+		left:20px;
+		top:200px;
+		}
+				.rub
+				{
+				background-image:url(img/rubY.gif);
+				background-repeat:no-repeat;
+				width:256px;
+				height:64px;
+				border-style: none;
+				margin: 0px; 
+				padding: 0px 0px; 
+				}
+
+/*här anv ett trick för att en bild ska kunna anv som länk, 
+text-indent flyttar originaltexetn ur synfäletet*/
+#skala
+{    
+border-style:none;
+position:absolute;
+left:90px;
+top:120px;
+background-image:url(img/skalamander.gif);    
+display:block;    
+width:192px;
+height:192px;
+text-indent:-9999px;
+}
+
+#birdyUDP
+{    
+border-style:none;
+position:absolute;
+left:90px;
+top:120px;
+background-image:url(img/birdyUDP.gif);    
+display:block;    
+width:192px;
+height:192px;
+text-indent:-9999px;
+}
+
+/*
+.skala
+		{
+		cursor:pointer;
+		background-image:url(img/skalamander.gif);
+		background-repeat:no-repeat;
+		width:192px;
+		height:192px;
+		border-style: none;
+		position:absolute;
+
+		left:90px;
+
+		top:120px;
+		}
+
+
+*/
+.foot
+{
+border-style: none;
+position:relative;
+bottom:auto;
+text-align: center;
+}
+
+	img
+	{ 
+ 	border-style:none;
+	}
+
+
+		.txt
+		{
+padding: 0px 0px; 
+text-transform:none;
+	/*	text-transform:uppercase;
+	  column-width: 15em;*/
+	
+		font-family: Verdana, Arial, Helvetica, SunSans-Regular, Sans-Serif;
+		text-decoration: none; 
+	 	left:50px;
+
+		position:absolute;
+
+		font-size: 16px;
+		font-weight:bold;
+		
+		text-align: left;
+		top:260px;
+	/*
+		
+		top:260px;
+*/
+		}
+		.txt2
+		{
+padding: 0px 0px; 
+text-transform:none;
+	
+		font-family: Verdana, Arial, Helvetica, SunSans-Regular, Sans-Serif;
+		text-decoration: none; 
+	 	
+
+		position:absolute;
+
+		font-size: 12px;
+		font-weight:bold;
+		
+		text-align: left;
+		top:360px;
+		left:350px;
+		}
+		.txt3
+		{
+		padding: 0px 0px; 
+		text-transform:none;
+	
+		font-family: Verdana, Arial, Helvetica, SunSans-Regular, Sans-Serif;
+		text-decoration: none; 
+	 	
+
+		position:absolute;
+
+		font-size: 12px;
+		font-weight:bold;
+		
+		text-align: left;
+		top:580px;
+		left:150px;
+		}
+
+h2
+{
+			font-size: 14px;
+			text-transform:uppercase;
+			text-align: left;
+			color:Yellow;
+			background-color:none;
+			/*#145411;*/
+			}
+
+a:hover 
+{
+color:red;
+} 
+a:active 
+{
+outline: none;
+color:yellow;
+}
+	ul.lista
+	{
+text-transform:none;
+
+font-family : "Times New Roman", Times, serif; 
+
+	font-size: 18px;
+	
+	color:white;
+	list-style-type:circle;
+	}
+table
+
+{
+
+width:100%;
+
+}
+
+th
+
+{
+padding: 0px 30px; 
+/*height:10px;*/
+}
+.info
+{
+position:relative; 
+z-index:24; 
+background-color:none;/*#ccc
+color:#000;*/
+text-decoration:none
+
+}
+
+a.info:hover
+{
+z-index:25; 
+/*
+background-color:#ff0;
+*/
+}
+
+a.info span
+{
+display: none
+}
+
+a.info:hover span
+{ 
+
+display:block;
+position:absolute;
+top:2em; 
+left:2em; 
+width:15em;
+border:1px solid #000000; /*#FFFF00*/
+background-color:white; /*#3F48CC*/
+font-family : "Times New Roman", Times, serif; 
+
+font-size: 15px;
+/*
+background-color:#cff; 
+*/
+color:#000;
+
+text-align: center
+}
+
+
+
